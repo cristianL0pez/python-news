@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Posts</title>
+    <!-- Agrega la referencia a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Personaliza el estilo de las tarjetas */
+        .card {
+            background-color: #f8f9fa; /* Cambia el color de fondo */
+            border: 1px solid #dee2e6; /* Añade un borde */
+            border-radius: 10px; /* Añade bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Añade una sombra */
+        }
+
+        .card-title a {
+            color: #007bff; /* Cambia el color del enlace */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+        }
+    </style>
 </head>
 <body>
-    <h1>Community Posts</h1>
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="{{ post.link }}" target="_blank">{{ post.title }}</a>
-                <p>Author: {{ post.author }} | Date: {{ post.date }}</p>
-                <p>{{ post.content }}</p>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="container mt-4">
+        <h1>Community Posts</h1>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{{ url_for('get_post', post_id=loop.index0) }}">{{ post.title }}</a></h5>
+                            <p class="card-text">Author: {{ post.author }} | Date: {{ post.date }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Agrega la referencia a los scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
