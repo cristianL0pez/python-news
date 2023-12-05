@@ -1,0 +1,27 @@
+<!-- templates/summary.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <!-- Agrega aquí cualquier enlace a hojas de estilo, scripts, etc. que necesites -->
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Summary</h1>
+        {% if post %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">Author: {{ post.author }} | Date: {{ post.date }}</p>
+                    <p>Summary: {{ post.summary }}</p>
+                </div>
+            </div>
+        {% else %}
+            <p>Post not found</p>
+        {% endif %}
+    </div>
+    <!-- Agrega aquí cualquier script o enlace adicional que necesites -->
+</body>
+</html>

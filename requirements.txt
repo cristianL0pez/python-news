@@ -9,3 +9,4 @@ aiofiles==0.8.0
 beautifulsoup4==4.10.0
 requests==2.26.0
 feedparser==6.0.2
+replicate==0.21.1

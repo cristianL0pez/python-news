@@ -31,6 +31,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="{{ url_for('get_post', post_id=loop.index0) }}">{{ post.title }}</a></h5>
                             <p class="card-text">Author: {{ post.author }} | Date: {{ post.date }}</p>
+                            <p><a href="{{ url_for('get_summary', post_id=loop.index0) }}">Ver Resumen</a></p>
                         </div>
                     </div>
                 </div>
